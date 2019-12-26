@@ -1,0 +1,6 @@
+[submodule "tests_example/3rdparty/googletest"]
+	path = tests_example/3rdparty/googletest
+	url = https://github.com/google/googletest.git
+[submodule "tests_example/3rdparty/unity"]
+	path = tests_example/3rdparty/unity
+	url = git@github.com:ThrowTheSwitch/Unity.git
