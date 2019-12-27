@@ -9,9 +9,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: Clone a remote repo
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "${DEPLOY_KEY}"
+        git submodule update --init --recursive
+    - name: Build
+      run: |
+        mkdir tests_example/build
+        cd tests_example/build
+        cmake ..
+        make
