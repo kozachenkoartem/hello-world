@@ -1,0 +1,20 @@
+name: TestExample
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Clone submodules
+      run: git submodule update --init --recursive
+    - name: Build and Test
+      run: |
+        mkdir tests_example/build
+        cd tests_example/build
+        cmake ..
+        make
+        make test
