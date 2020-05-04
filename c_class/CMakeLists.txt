@@ -1,0 +1,44 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
+
+PROJECT(lib)
+
+SET(LIB_C_SRC
+    src/class.c
+)
+
+ADD_COMPILE_OPTIONS(-Wall)
+
+OPTION(ENABLE_COVERAGE "Enable coverage" OFF)
+
+ADD_SUBDIRECTORY(../3rdparty/unity unity)
+
+IF(ENABLE_COVERAGE)
+    INCLUDE(../3rdparty/cmake-modules/CodeCoverage.cmake)
+ENDIF()
+
+MESSAGE(STATUS "Build library")
+
+ADD_LIBRARY(lib_objects OBJECT ${LIB_C_SRC})
+
+SET_TARGET_PROPERTIES(lib_objects
+PROPERTIES
+    POSITION_INDEPENDENT_CODE TRUE
+    C_STANDARD "11")
+
+if(ENABLE_COVERAGE)
+        SET_TARGET_PROPERTIES(lib_objects
+        PROPERTIES
+            COMPILE_FLAGS "--coverage")
+endif()
+
+TARGET_INCLUDE_DIRECTORIES(lib_objects PRIVATE include)
+
+SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+ADD_LIBRARY(lib SHARED $<TARGET_OBJECTS:lib_objects>)
+
+TARGET_INCLUDE_DIRECTORIES(lib INTERFACE include)
+
+ENABLE_TESTING()
+
+ADD_SUBDIRECTORY(tests)
