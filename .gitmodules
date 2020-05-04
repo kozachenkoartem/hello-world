@@ -1,9 +1,10 @@
-[submodule "tests_example/3rdparty/googletest"]
-	path = tests_example/3rdparty/googletest
+
+[submodule "3rdparty/googletest"]
+	path = 3rdparty/googletest
 	url = https://github.com/google/googletest.git
-[submodule "tests_example/3rdparty/unity"]
-	path = tests_example/3rdparty/unity
+[submodule "3rdparty/unity"]
+	path = 3rdparty/unity
 	url = https://github.com/ThrowTheSwitch/Unity.git
-[submodule "tests_example/3rdparty/cmake-modules"]
-	path = tests_example/3rdparty/cmake-modules
+[submodule "3rdparty/cmake-modules"]
+	path = 3rdparty/cmake-modules
 	url = https://github.com/bilke/cmake-modules.git

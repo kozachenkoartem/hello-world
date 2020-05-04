@@ -10,10 +10,11 @@ ADD_COMPILE_OPTIONS(-Wall)
 
 OPTION(ENABLE_COVERAGE "Enable coverage" OFF)
 
-ADD_SUBDIRECTORY(3rdparty)
+ADD_SUBDIRECTORY(../3rdparty/googletest gtest)
+ADD_SUBDIRECTORY(../3rdparty/unity unity)
 
 IF(ENABLE_COVERAGE)
-    INCLUDE(3rdparty/cmake-modules/CodeCoverage.cmake)
+    INCLUDE(../3rdparty/cmake-modules/CodeCoverage.cmake)
 ENDIF()
 
 MESSAGE(STATUS "Build library")
