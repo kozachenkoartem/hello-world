@@ -51,8 +51,6 @@ void draw_heap(auto const& v)
         bails(n, w), data(n, w, first, last);
     };
     const int m {static_cast<int>(std::ceil(std::log2(1 + v.size())))};
-
-    print("m:", std::vector{m});
     auto first {v.cbegin()};
     for (int i{}; i != m; ++i) { tier(i, m, first, v.cend()); }
 }
