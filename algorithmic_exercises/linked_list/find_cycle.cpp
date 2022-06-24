@@ -50,9 +50,6 @@ void break_cycle(auto head) {
 }
 
 
-
-
-
 int main()
 {
 
