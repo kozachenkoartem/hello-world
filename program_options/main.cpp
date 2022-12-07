@@ -37,7 +37,10 @@ int main(int argc, char const *argv[])
     }
 
 
-	std::cout << "#################################################  " << m_vm["tconfigfile"].as< std::string >() << std::endl;
+    if(m_vm.count("tconfigfile")) {
+		std::cout << "#################################################  " << m_vm["tconfigfile"].as< std::string >() << std::endl;
+    }
+
 	/* code */
 	return 0;
 }
