@@ -12,5 +12,6 @@ add_executable(test
 
 PROJECT_VERSION_FROM_GIT()
 
-message("####################### ${PROJECT_VERSION}")
+message("####################### ${PROJECT_VERSION}  ${PROJECT_GIT_SHORT} ")
+
 

@@ -6,6 +6,7 @@ class test
 public:
 
 	int get_x() {return xxx;}
+	int get_z() {return xxx;}
 	test();
 	~test();
 
