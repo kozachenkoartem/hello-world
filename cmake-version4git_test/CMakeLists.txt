@@ -9,3 +9,8 @@ add_executable(test
     test.h
     main.cpp
 )
+
+PROJECT_VERSION_FROM_GIT()
+
+message("####################### ${PROJECT_VERSION}")
+
