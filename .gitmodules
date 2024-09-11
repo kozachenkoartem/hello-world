@@ -8,3 +8,6 @@
 [submodule "3rdparty/cmake-modules"]
 	path = 3rdparty/cmake-modules
 	url = https://github.com/bilke/cmake-modules.git
+[submodule "cmake-version4git_test/3rdparty/version4git"]
+	path = cmake-version4git_test/3rdparty/version4git
+	url = https://github.com/Oleh-Kravchenko/cmake-version4git.git
