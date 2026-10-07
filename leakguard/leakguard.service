@@ -1,0 +1,24 @@
+[Unit]
+Description=Local Tuya leak sensor guard
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=kozak
+Group=kozak
+WorkingDirectory=/home/kozak/leakguard-experiments
+ExecStart=/usr/bin/python3 -m leakguard.wake_listener --config /home/kozak/leakguard-experiments/leakguard/config.json
+Restart=on-failure
+RestartSec=2
+AmbientCapabilities=CAP_NET_RAW
+CapabilityBoundingSet=CAP_NET_RAW
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

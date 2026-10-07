@@ -1,0 +1,26 @@
+{
+  "interface": "eth0",
+  "wake_quiet_seconds": 3.0,
+  "sleep_quiet_seconds": 5.0,
+  "worker_window_seconds": 20.0,
+  "worker_retry_seconds": 0.2,
+  "worker_connect_timeout_seconds": 0.5,
+  "debug": false,
+  "sensors": [
+    {
+      "name": "workshop",
+      "mac": "00:00:00:00:00:00",
+      "ip": "192.168.1.100",
+      "device_id": "replace-with-device-id",
+      "local_key": "replace-with-local-key",
+      "version": 3.4
+    }
+  ],
+  "pump": {
+    "ip": "replace-with-pump-ip",
+    "device_id": "replace-with-pump-device-id",
+    "local_key": "replace-with-pump-local-key",
+    "version": 3.4
+  },
+  "dry_run": true
+}
